@@ -1,0 +1,430 @@
+#reload{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: url(../img/loadBkg.jpg) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    -webkit-flex-direction: column;
+    ul{
+        width: 100%;
+        li:nth-child(2){
+            display: block;
+            width: 44.53%;
+            margin: 0 auto;
+            position: relative;
+            height: 0.14rem;
+            
+            margin-top: 0.2rem;
+            margin-left: 27.73%;
+            .upOut{
+               overflow: hidden;
+               height: 100%;
+               width: 100%; 
+               border-radius: 0.2rem;
+               position: relative;
+               background-color: #b1301f;
+            }
+            .up{
+                background-color: #d7b27d;
+                height: 100%;
+                width: 0%;  
+                border-radius: 0.2rem;
+            }
+            p{
+                position: absolute;
+                left: 105%;
+                top: -0.09rem;
+                font-size: 0.2rem;
+                color: #ffecb4;
+            }
+        }
+        li:nth-child(1) .logoBox{
+            width: 35.87%;
+            margin: 0 auto;
+            position: relative;
+            img{
+                width: 100%;
+            }
+            .load01{
+                width: 0.2rem;
+                position: absolute;
+                right: 0;
+                bottom: 120%;
+                animation: aniLoad01 1s linear infinite;
+                -moz-animation: aniLoad01 1s linear infinite;
+                -webkit-animation: aniLoad01 1s linear infinite;
+               -ms-animation: aniLoad01 1s linear infinite; 
+            }
+            .loadAll{
+                width: 0.25rem;
+                position: absolute;
+                right: 110%;
+                top: -10%;
+                opacity: 0;
+                animation: aniLoad02 1s linear infinite;
+                -moz-animation: aniLoad02 1s linear infinite;
+                -webkit-animation: aniLoad02 1s linear infinite;
+               -ms-animation: aniLoad02 1s linear infinite; 
+               >div{
+                   position: absolute;
+                   top: 50%;
+                   left: 50%;
+                   width: 0%;
+                   height: 0%;
+                   overflow: hidden;
+                   background-color: rgba(201,87,56,1);
+                   animation: aniLoad03 1s linear infinite;
+                    -moz-animation: aniLoad03 1s linear infinite;
+                    -webkit-animation: aniLoad03 1s linear infinite;
+                   -ms-animation: aniLoad03 1s linear infinite;
+               }
+            }
+            .loadAll2{
+                right:-30%;
+                top: -6%;
+                width: 0.22rem;
+                animation-delay: 0.57s;
+                -moz-animation-delay: 0.57s;
+                -webkit-animation-delay: 0.57s;
+                -ms-animation-delay: 0.57s;
+                >div{
+                     animation-delay: 0.57s;
+                    -moz-animation-delay: 0.57s;
+                    -webkit-animation-delay: 0.57s;
+                    -ms-animation-delay: 0.57s;
+                }
+            }
+            .loadAll3{
+                top: 25%;
+                right:120%;
+                animation-delay: 0.37s;
+                -moz-animation-delay: 0.37s;
+                -webkit-animation-delay: 0.37s;
+                -ms-animation-delay: 0.37s;
+                >div{
+                    animation-delay: 0.37s;
+                    -moz-animation-delay: 0.37s;
+                    -webkit-animation-delay: 0.37s;
+                    -ms-animation-delay: 0.37s;
+                }
+            }
+            .loadAll4{
+                top: 22%;
+                right:-18%;
+                width: 0.22rem;
+                animation-delay: 0.22s;
+                -moz-animation-delay: 0.22s;
+                -webkit-animation-delay: 0.22s;
+                -ms-animation-delay: 0.22s;
+                >div{
+                    animation-delay: 0.22s;
+                    -moz-animation-delay: 0.22s;
+                    -webkit-animation-delay: 0.22s;
+                    -ms-animation-delay: 0.22s;
+                }
+            }
+        }
+    } 
+}
+@keyframes aniLoad01
+{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@-moz-keyframes aniLoad01
+{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes aniLoad01 
+{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+@-ms-keyframes aniLoad01
+{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+@keyframes aniLoad02
+{
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@-moz-keyframes aniLoad02
+{
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@-webkit-keyframes aniLoad02 
+{
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+@-ms-keyframes aniLoad02
+{
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+@keyframes aniLoad03
+{
+    from {top:50%;left: 50%;width: 0%;height: 0%;}
+    to {top:0%;left: 0%;width: 100%;height: 100%;}
+}
+
+@-moz-keyframes aniLoad03
+{
+    from {top:50%;left: 50%;width: 0%;height: 0%;}
+    to {top:0%;left: 0%;width: 100%;height: 100%;}
+}
+
+@-webkit-keyframes aniLoad03 
+{
+    from {top:50%;left: 50%;width: 0%;height: 0%;}
+    to {top:0%;left: 0%;width: 100%;height: 100%;}
+}
+@-ms-keyframes aniLoad03
+{
+    from {top:50%;left: 50%;width: 0%;height: 0%;}
+    to {top:0%;left: 0%;width: 100%;height: 100%;}
+}
+@font-face {
+    font-family: "sscn";
+    src: url('../fonts/sscn.otf');
+}
+#phoneCome{
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: url(../img/phoneBkg.jpg) no-repeat;
+    background-size: cover;
+    position: relative;
+    .head{
+        width: 100%;       
+        >div:nth-child(1){
+            width: 23.75%;
+            margin: 0.5rem 6% 0.5rem 8%;
+        }
+        >div:nth-child(2){
+            width: 60%;
+            color: white;
+            .name{
+                font-size: 0.32rem;
+                margin-top: 0.8rem;
+            }
+            .chat{
+                font-size: 0.28rem;
+                line-height: 0.55rem;
+            }
+        }
+        img{
+            width: 100%;
+        }
+        
+    }
+    .twoBox{
+        width: 19.375%;
+        position: absolute;
+        bottom: 0;
+        left: 18%;
+        a{
+            width: 100%;
+            display: block;
+            position: relative;
+            img{
+                width: 100%;
+            }
+            .hand{
+                width: 44%;
+                position: absolute;
+                top: 95%;
+                left: 28%;
+                display: none;
+            }
+            .handTween{
+                animation: handtween 0.6s linear infinite;
+                -moz-animation: handtween 0.6s linear infinite;
+                -webkit-animation: handtween 0.6s linear infinite;
+                -ms-animation: handtween 0.6s linear infinite;
+            }
+        }
+        p{
+            font-size: 0.26rem;
+            color: white;
+            text-align: center;
+            line-height: 1.0rem;
+        }
+    }
+    .accept{
+       left: auto;
+       right: 18%!important; 
+       
+    }
+}
+@keyframes handtween
+{
+    from {opacity:1;top: 95%;}
+    to {opacity: 0;top: 50%;}
+}
+
+@-moz-keyframes handtween
+{
+    from {opacity:1;top: 95%;}
+    to {opacity: 0;top: 50%;}
+}
+
+@-webkit-keyframes handtween 
+{
+    from {opacity:1;top: 95%;}
+    to {opacity: 0;top: 50%;}
+}
+@-ms-keyframes handtween
+{
+     from {opacity:1;top: 95%;}
+    to {opacity: 0;top: 50%;}
+}
+#yearVideo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+    video{
+        width: 100%;
+        height: 100%;
+    }
+}
+body{
+    background-color: #ebebeb;
+}
+#group{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .input{
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        img{
+            width: 100%;
+        }
+    }
+    .group{
+        padding:0.3rem 0;
+        width: 95.2%;
+        margin: 0 auto;
+        .myWord{
+            width: 100%;
+            margin-bottom: 0.4rem;
+            .mwHead{
+                width: 0.7rem;
+                height: 0.7rem;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                }
+            }
+            .mwContent{
+                width: 72%;
+                margin-right: 3%;
+                .mwImg{
+                    width: 50%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .mwText{
+                    padding:0.1rem 0.15rem;
+                    background-color: #a0e75a;
+                    font-size: 0.3rem;
+                    color: #1e1e1e;
+                    border: 1px solid #cecece;
+                    border-radius: 5px;
+                    position: relative;
+                    line-height: 0.46rem;
+                }
+                .gs{
+                    position: absolute;
+                    right: -0.11rem;
+                    top: 0.205rem;
+                    height: 0.25rem;
+                    img{
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        .otherWord{
+            width: 100%;
+            margin-bottom: 0.4rem;
+            .owHead{
+                width: 0.7rem;
+                height: 0.7rem;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                }
+            }
+            .owContent{
+                width: 72%;
+                margin-left: 3%;
+                .owName{
+                    font-size: 0.24rem;
+                    color: #999999;
+                    line-height: 0.3rem;
+                    margin-bottom: 0.05rem;
+                }
+                .owText{
+                    padding:0.1rem 0.15rem;
+                    background-color: white;
+                    font-size: 0.3rem;
+                    line-height: 0.46rem;
+                    color: #1e1e1e;
+                    border: 1px solid #cecece;
+                    border-radius: 5px;
+                    position: relative;
+                }
+                .videoOver{
+                    p{
+                        background: url(../img/chat.jpg) no-repeat 0.05rem center;
+                        background-size: auto 0.2rem;
+                        text-indent: 0.55rem;
+                    }
+                }
+                .owImg{
+                    width: 50%;
+                    margin-top: 0.2rem;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .ws{
+                    position: absolute;
+                    left: -0.12rem;
+                    top: 0.205rem;
+                    height: 0.25rem;
+                    img{
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
