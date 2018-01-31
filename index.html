@@ -289,12 +289,52 @@
 		<div id="sharing" style="display: none;">
 			<img src="img/sharing.png" />
 		</div>
-		<!--<button id="hidBtn" style="position: fixed;bottom: 0;right: 0;display: block;z-index: 100;">隐藏的按钮</button>-->
+		<img src="img/music.png" id="music" />
+		<button id="hidBtn" style="position: fixed;bottom: 0;right: 0;display: block;z-index: 100;">隐藏的按钮</button>
 		<div class="delete" hidden="hidden"></div>
 	</body>
+	<script type="text/javascript" src="js/input.js" ></script>
 	<script type="text/javascript" src="js/popWin.js" ></script>
 	<script type="text/javascript" src="js/index.js" ></script>
 	<script>
+		$(document).ready(function () {
+
+        //判断诗苹果还是安卓
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {//移动终端浏览器版本信息
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile/i) || !!u.match(/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                };
+            }(),
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        }
+//如果是苹果手机
+        if (browser.versions.iPhone || browser.versions.iPad || browser.versions.ios) {
+            $('body').height($('body')[0].clientHeight);
+        }
+
+//如果是安卓手机
+        if (browser.versions.android) {
+            $('#username').on('click', function () {
+                var target = this;
+                setTimeout(function(){
+                    target.scrollIntoViewIfNeeded();
+
+                },300);
+            });
+        }
+
+    });
 		//微信加入聊天
 		function audioAutoPlay(id,v){
 			var audio = document.getElementById(id);

@@ -2,12 +2,40 @@ $(function(){
 	$('.delete').remove();
 	loading();
 //	showRed();
+	var music = 0;
+	var musicOpen = true;
+	var musicTween = setInterval(function() {
+		music += 2;
+		$('#music').css('transform', "rotate(" + music + "deg)");
+		if(music == 360) {
+			music = 0;
+		}
+	}, 10);
+	$('#music').on('touchstart', function() {
+		if(musicOpen == true) {
+			musicOpen = false;
+			clearInterval(musicTween);
+			$('#bg')[0].pause();
+		} else {
+			musicOpen = true;
+			musicTween = setInterval(function() {
+				music += 2;
+				$('#music').css('transform', "rotate(" + music + "deg)");
+				if(music == 360) {
+					music = 0;
+				}
+			}, 10);
+			$('#bg')[0].play();
+		}
+	
+	});
 });
 
 //显示红包页面
 function showRed(){
 	$('#getRed').show();
 	var mydata;
+	$('#music').show();
 	$.get('wx.json',function(data){
 		mydata = data;
 		addDanmu('.danmu1','danmuBox1',mydata,14000);
@@ -170,6 +198,7 @@ function wxChating(wn,wh){
 					setTimeout(function() {
 						$('#bg')[0].pause();
 						//董事长来视频了
+						$('#group').css('opacity',0);
 						$('#phoneCome').show();
 						$('#pMusic')[0].play();
 						//先显示视频结束
@@ -195,6 +224,7 @@ function wxChating(wn,wh){
 						});
 						//视频播放完毕
 						document.getElementById("videoy").onended = function() {
+							$('#group').css('opacity',1);
 							$('#yearVideo').hide();
 							$('#bg')[0].play();
 							$('#over')[0].play();
@@ -203,6 +233,7 @@ function wxChating(wn,wh){
 								if(i == pIndex.length - 1) {
 									clearInterval(itween);
 									$('.happinput').show();
+									document.removeEventListener('touchmove', onHandler, false);
 									//点击事件
 									$('#hidBtn').on('click', function() {
 										myWord(20, '.group', 1, wh, $('.happinput input').val(), "");
@@ -215,6 +246,8 @@ function wxChating(wn,wh){
 												elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i]);
 												$('.word19').on('click', function() {
 													$('#group').hide();
+													showRed();
+													
 												});
 											}, 1500);
 											
