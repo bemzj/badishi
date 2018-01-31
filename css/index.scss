@@ -55,86 +55,91 @@
             img{
                 width: 100%;
             }
-            .load01{
-                width: 0.2rem;
-                position: absolute;
-                right: 0;
-                bottom: 120%;
-                animation: aniLoad01 1s linear infinite;
-                -moz-animation: aniLoad01 1s linear infinite;
-                -webkit-animation: aniLoad01 1s linear infinite;
-               -ms-animation: aniLoad01 1s linear infinite; 
-            }
-            .loadAll{
-                width: 0.25rem;
-                position: absolute;
-                right: 110%;
-                top: -10%;
-                opacity: 0;
-                animation: aniLoad02 1s linear infinite;
-                -moz-animation: aniLoad02 1s linear infinite;
-                -webkit-animation: aniLoad02 1s linear infinite;
-               -ms-animation: aniLoad02 1s linear infinite; 
-               >div{
-                   position: absolute;
-                   top: 50%;
-                   left: 50%;
-                   width: 0%;
-                   height: 0%;
-                   overflow: hidden;
-                   background-color: rgba(201,87,56,1);
-                   animation: aniLoad03 1s linear infinite;
-                    -moz-animation: aniLoad03 1s linear infinite;
-                    -webkit-animation: aniLoad03 1s linear infinite;
-                   -ms-animation: aniLoad03 1s linear infinite;
-               }
-            }
-            .loadAll2{
-                right:-30%;
-                top: -6%;
-                width: 0.22rem;
-                animation-delay: 0.57s;
-                -moz-animation-delay: 0.57s;
-                -webkit-animation-delay: 0.57s;
-                -ms-animation-delay: 0.57s;
-                >div{
-                     animation-delay: 0.57s;
-                    -moz-animation-delay: 0.57s;
-                    -webkit-animation-delay: 0.57s;
-                    -ms-animation-delay: 0.57s;
-                }
-            }
-            .loadAll3{
-                top: 25%;
-                right:120%;
-                animation-delay: 0.37s;
-                -moz-animation-delay: 0.37s;
-                -webkit-animation-delay: 0.37s;
-                -ms-animation-delay: 0.37s;
-                >div{
-                    animation-delay: 0.37s;
-                    -moz-animation-delay: 0.37s;
-                    -webkit-animation-delay: 0.37s;
-                    -ms-animation-delay: 0.37s;
-                }
-            }
-            .loadAll4{
-                top: 22%;
-                right:-18%;
-                width: 0.22rem;
-                animation-delay: 0.22s;
-                -moz-animation-delay: 0.22s;
-                -webkit-animation-delay: 0.22s;
-                -ms-animation-delay: 0.22s;
-                >div{
-                    animation-delay: 0.22s;
-                    -moz-animation-delay: 0.22s;
-                    -webkit-animation-delay: 0.22s;
-                    -ms-animation-delay: 0.22s;
-                }
-            }
+            
         }
     } 
+}
+.load01 {
+    width: 0.2rem;
+    position: absolute;
+    right: 0;
+    bottom: 120%;
+    animation: aniLoad01 1s linear infinite;
+    -moz-animation: aniLoad01 1s linear infinite;
+    -webkit-animation: aniLoad01 1s linear infinite;
+    -ms-animation: aniLoad01 1s linear infinite;
+}
+
+.loadAll {
+    width: 0.25rem;
+    position: absolute;
+    right: 110%;
+    top: -10%;
+    opacity: 0;
+    animation: aniLoad02 1s linear infinite;
+    -moz-animation: aniLoad02 1s linear infinite;
+    -webkit-animation: aniLoad02 1s linear infinite;
+    -ms-animation: aniLoad02 1s linear infinite;
+    >div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0%;
+        height: 0%;
+        overflow: hidden;
+        background-color: rgba(201, 87, 56, 1);
+        animation: aniLoad03 1s linear infinite;
+        -moz-animation: aniLoad03 1s linear infinite;
+        -webkit-animation: aniLoad03 1s linear infinite;
+        -ms-animation: aniLoad03 1s linear infinite;
+    }
+}
+
+.loadAll2 {
+    right: -30%;
+    top: -6%;
+    width: 0.22rem;
+    animation-delay: 0.57s;
+    -moz-animation-delay: 0.57s;
+    -webkit-animation-delay: 0.57s;
+    -ms-animation-delay: 0.57s;
+    >div {
+        animation-delay: 0.57s;
+        -moz-animation-delay: 0.57s;
+        -webkit-animation-delay: 0.57s;
+        -ms-animation-delay: 0.57s;
+    }
+}
+
+.loadAll3 {
+    top: 25%;
+    right: 120%;
+    animation-delay: 0.37s;
+    -moz-animation-delay: 0.37s;
+    -webkit-animation-delay: 0.37s;
+    -ms-animation-delay: 0.37s;
+    >div {
+        animation-delay: 0.37s;
+        -moz-animation-delay: 0.37s;
+        -webkit-animation-delay: 0.37s;
+        -ms-animation-delay: 0.37s;
+    }
+}
+
+.loadAll4 {
+    top: 22%;
+    right: -18%;
+    width: 0.22rem;
+    animation-delay: 0.22s;
+    -moz-animation-delay: 0.22s;
+    -webkit-animation-delay: 0.22s;
+    -ms-animation-delay: 0.22s;
+    >div {
+        animation-delay: 0.22s;
+        -moz-animation-delay: 0.22s;
+        -webkit-animation-delay: 0.22s;
+        -ms-animation-delay: 0.22s;
+    }
 }
 @keyframes aniLoad01
 {
@@ -207,12 +212,14 @@
     src: url('../fonts/sscn.otf');
 }
 #phoneCome{
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    display: none;
+    z-index: 100;
     background: url(../img/phoneBkg.jpg) no-repeat;
     background-size: cover;
-    position: relative;
     .head{
         width: 100%;       
         >div:nth-child(1){
@@ -325,9 +332,25 @@ body{
         img{
             width: 100%;
         }
+        form{
+            display: none;
+            position: absolute;
+            top: 22.5%;
+            left: 15.5%;
+            width: 60%;
+            input{
+                background-color: transparent;
+                width: 100%;
+                display: block;
+                border: 0px;
+                outline: none;
+                line-height: 0.5rem;
+                font-size: 0.26rem;
+            }
+        }
     }
     .group{
-        padding:0.3rem 0;
+        padding:0.3rem 0 1.2rem;
         width: 95.2%;
         margin: 0 auto;
         .myWord{
@@ -371,7 +394,11 @@ body{
                 }
             }
         }
+        span{
+            color: #fc1f01;
+        }
         .otherWord{
+            opacity: 0;
             width: 100%;
             margin-bottom: 0.4rem;
             .owHead{
@@ -427,4 +454,345 @@ body{
             }
         }
     }
+}
+#getRed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow-y: scroll;
+    background-color: #fce8b5;
+    .redTop{
+        width: 100%;
+        position: relative;
+        >img{
+            width: 100%;
+        }
+        .money{
+            position: absolute;
+            top: 22.1%;
+            text-align: center;
+            left: 0%;
+            width: 100%;
+            font-size: 0.42rem;
+            font-family: helvetica;
+            font-weight: bold;
+            color: #fff031;
+        }
+        .flower{
+            position: absolute;
+            bottom: auto;
+            width: 0.3rem;
+            top: 36.2%;
+            right: auto;
+            left: 20.27%;
+            animation: aniLoad01 1s linear infinite;
+            -moz-animation: aniLoad01 1s linear infinite;
+            -webkit-animation: aniLoad01 1s linear infinite;
+            -ms-animation: aniLoad01 1s linear infinite;
+            >img{
+                width: 100%;
+            }
+        }
+        .star{
+            position: absolute;
+            top: 14%;
+            left: 76.27%;
+            width: 0.3rem;
+            >img{
+                width: 100%;
+            }
+            animation: aniLoad04 1.5s linear infinite;
+            -moz-animation: aniLoad04 1.5s linear infinite;
+            -webkit-animation: aniLoad04 1.5s linear infinite;
+            -ms-animation: aniLoad04 1.5s linear infinite;
+        }
+        .share{
+            width: 79.8%;
+            position: absolute;
+            left: 10.1%;
+            bottom: 5%;
+            display: block;
+        }
+        .danmu{
+            position: absolute;
+            left: 0;
+            top: 38%;
+            height: 30%;
+            width: 100%;
+            >div{
+                height: 33.3333%;
+                position: relative;
+            }
+        }
+        .danBox{
+            margin-right: 10px;
+            .floatl:nth-child(1){
+                width: 0.6rem;
+                height: 0.6rem;
+                overflow: hidden;
+                border-radius: 50%;
+                >img{
+                    width: 100%;
+                }
+            }
+            .floatl:nth-child(2){
+                font-size: 0.28rem;
+                color: white;
+                line-height: 0.6rem;
+                text-indent: 0.1rem;
+            }
+            
+        }
+    }
+}
+.friend {
+    position: relative;
+    .left{
+        position: absolute;
+        bottom: 0.8rem;
+        left: 0;
+        width: 0.5rem;
+        img{
+            width: 100%;
+        }
+    }
+    .right{
+        position: absolute;
+        top: 1.0rem;
+        right: 0;
+        width: 0.5rem;
+        img{
+            width: 100%;
+        }
+    }
+    .title {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    .fContent{
+        width: 93.33%;
+        height: 5.1rem;
+        overflow-y: scroll;
+        margin: 0 auto;
+        background-color: #fffbe7;
+        .fChild:nth-last-child(1){
+            background: none;
+        }
+        .fChild{
+            width: 93.33%;
+            padding: 0.4rem 0;
+            margin: 0 auto;
+            background: url(../img/line.png) no-repeat left bottom;
+            background-size: 100% auto;
+            .fLeft{
+                width: 16%;
+                .fHead{
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    img{
+                       width: 100%; 
+                    }
+                }
+            }
+            .fMiddle{
+                width: 62%;
+                ul li:nth-child(1) p{
+                    margin-top: 0.025rem;
+                    font-size: 0.28rem;
+                    line-height: 0.4rem;
+                    color: #333333;
+                    span{
+                        font-size: 0.2rem;
+                        color: #999999;
+                    }
+                }
+                ul li:nth-child(2) p{
+                    font-size: 0.24rem;
+                    line-height: 0.4rem;
+                    color: #666666;
+                }
+            }
+            .fRight{
+                width: 22%;
+                font-size: 0.32rem;
+                line-height: 0.9rem;
+                color: #f17854;
+                text-align: right;
+            }
+        }
+    }
+    .bottom {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+}
+.picBox{
+    padding: 0.4rem 0;
+    width: 100%;
+    position: relative;
+    .picImg{
+        width: 79.2%;
+        position: absolute;
+        left: 10.4%;
+        top: 43.5%;
+        .floatl{
+            width:47.5%;
+            margin-right: 5%;
+            a{
+                display: block;
+                width: 100%;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        .floatl:nth-last-child(2){
+            margin-right: 0%;
+        }
+    }
+    img{
+        width: 100%;
+    }
+}
+.knowMore{
+    width: 79.73%;
+    margin: 0 auto;
+    a{
+        display: block;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+}
+.shareLeft{
+    padding: 0.2rem 0;
+    width: 0.5rem;
+    img{
+        width: 100%;
+    }
+}
+#sharing{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 500;
+    img{
+        width: 100%;
+    }
+    
+}
+.lall {
+    width: 0.25rem;
+    position: absolute;
+    left: 24.8%;
+    top: 14.5%;
+    opacity: 0;
+    animation: aniLoad02 1s linear infinite;
+    -moz-animation: aniLoad02 1s linear infinite;
+    -webkit-animation: aniLoad02 1s linear infinite;
+    -ms-animation: aniLoad02 1s linear infinite;
+    >img{
+        width: 100%;
+    }
+    >div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0%;
+        height: 0%;
+        overflow: hidden;
+        background-color: #c7433a;
+        animation: aniLoad03 1s linear infinite;
+        -moz-animation: aniLoad03 1s linear infinite;
+        -webkit-animation: aniLoad03 1s linear infinite;
+        -ms-animation: aniLoad03 1s linear infinite;
+    }
+}
+.lall1{
+    width: 0.2rem;
+    left: 20.6%;
+    top: 14.1%;
+    animation-delay: 0.35s;
+        -moz-animation-delay: 0.35s;
+        -webkit-animation-delay: 0.35s;
+        -ms-animation-delay: 0.35s;
+    >div {
+        animation-delay: 0.35s;
+        -moz-animation-delay: 0.35s;
+        -webkit-animation-delay: 0.35s;
+        -ms-animation-delay: 0.35s;
+    }
+}
+.ab{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+.ablunbo{
+     animation: lunbo 2s linear infinite;
+        -moz-animation: lunbo 2s linear infinite;
+        -webkit-animation: lunbo 2s linear infinite;
+        -ms-animation: lunbo 2s linear infinite;
+}
+@keyframes aniLoad04
+{
+    0% {opacity: 1;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+@-moz-keyframes aniLoad04
+{
+     0% {opacity: 1;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+@-webkit-keyframes aniLoad04 
+{
+    0% {opacity: 1;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+@-ms-keyframes aniLoad04
+{
+      0% {opacity: 1;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+@keyframes lunbo
+{
+    from{left: 100%;}
+    to{left:-width/2;}
+}
+
+@-moz-keyframes lunbo
+{
+    from{left: 100%;}
+    to{left:-width/2;}
+}
+
+@-webkit-keyframes lunbo 
+{
+    from{left: 100%;}
+    to{left:-width/2;}
+}
+@-ms-keyframes lunbo
+{
+    from{left: 100%;}
+    to{left: -width/2;}
 }

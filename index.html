@@ -14,7 +14,14 @@
 		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 	<body>
+		<div class="delete" hidden="hidden"></div>
+		<div class="imgRoading" hidden="hidden">
+			<img src="img/red.png" />
+		</div>
 		<audio id="pMusic"  loop="loop" preload  src="music/wx.mp3" hidden="hidden"></audio >
+		<audio id="msg" preload  src="music/msg.mp3" hidden="hidden"></audio >
+		<audio id="over" preload  src="music/over.mp3" hidden="hidden"></audio >
+		<audio id="bg" autoplay="autoplay"  loop="loop" preload  src="music/bg.mp3" hidden="hidden"></audio >
 		<!--预加载-->
 		<div id="reload"  style="display: none;">
 			<ul>
@@ -53,15 +60,18 @@
 			</ul>
 		</div>
 		<!--群聊-->
-		<div id="group">
+		<div id="group" style="display: none;">
 			<div class="group">
 			</div>
 			<div class="input">
 				<img src="img/input.jpg" />
+				<form class="happinput">
+					<input type="text" >
+				</form>
 			</div>
 		</div>
 		<!--视频聊天-->
-		<div id="phoneCome">
+		<div id="phoneCome"   style="display: none;">
 			<div class="head">
 				<div class="floatl">
 					<img src="img/head.png" />
@@ -101,6 +111,186 @@
 				style="object-fit:fill"
 			></video>
 		</div>
+		<!--获得红包页面-->
+		<div id="getRed" style="display: none;">
+			<div class="redTop">
+				<img src="img/redBack.jpg" />
+				<p class="money">200.00元</p>
+				<div class="flower">
+					<img src="img/load01.png" />
+				</div>
+				<div class="star">
+					<img src="img/star.png" />
+				</div>
+				<div class="lall">
+					<img src="img/load02.png" />
+					<div></div>
+				</div>
+				<div class="lall lall1">
+					<img src="img/load02.png" />
+					<div></div>
+				</div>
+				<!--弹幕-->
+				<div class="danmu">
+					<div class="danmu1">						
+					</div>
+					<div class="danmu2">
+					</div>
+					<div class="danmu3">
+					</div>
+				</div>
+				<input type="image" class="share" src="img/shareNow.png">
+			</div>
+			<div class="friend">
+				<div class="title">
+					<img src="img/title.png" />
+				</div>
+				<div class="fContent">
+					<div class="left">
+						<img src="img/left.png" />
+					</div>
+					<div class="right">
+						<img src="img/right.png" />
+					</div>
+					<div class="fChild">
+						<div class="fLeft floatl">
+							<div class="fHead">
+								<img src="img/head.png" />
+							</div>
+						</div>
+						<div class="fMiddle floatl">
+							<ul>
+								<li>
+									<p>王文杰&nbsp;<span>2018-02-18</span></p>
+								</li>
+								<li>
+									<p>2018新年快乐，巴迪斯万岁！！</p>
+								</li>
+							</ul>
+						</div>
+						<div class="fRight floatr">
+							<p>66.66元</p>
+						</div>
+						<div class="clearBoth"></div>
+					</div>
+					<div class="fChild">
+						<div class="fLeft floatl">
+							<div class="fHead">
+								<img src="img/head.png" />
+							</div>
+						</div>
+						<div class="fMiddle floatl">
+							<ul>
+								<li>
+									<p>王文杰&nbsp;<span>2018-02-18</span></p>
+								</li>
+								<li>
+									<p>2018新年快乐，巴迪斯万岁！！</p>
+								</li>
+							</ul>
+						</div>
+						<div class="fRight floatr">
+							<p>66.66元</p>
+						</div>
+						<div class="clearBoth"></div>
+					</div>
+					<div class="fChild">
+						<div class="fLeft floatl">
+							<div class="fHead">
+								<img src="img/head.png" />
+							</div>
+						</div>
+						<div class="fMiddle floatl">
+							<ul>
+								<li>
+									<p>王文杰&nbsp;<span>2018-02-18</span></p>
+								</li>
+								<li>
+									<p>2018新年快乐，巴迪斯万岁！！</p>
+								</li>
+							</ul>
+						</div>
+						<div class="fRight floatr">
+							<p>66.66元</p>
+						</div>
+						<div class="clearBoth"></div>
+					</div>
+					<div class="fChild">
+						<div class="fLeft floatl">
+							<div class="fHead">
+								<img src="img/head.png" />
+							</div>
+						</div>
+						<div class="fMiddle floatl">
+							<ul>
+								<li>
+									<p>王文杰&nbsp;<span>2018-02-18</span></p>
+								</li>
+								<li>
+									<p>2018新年快乐，巴迪斯万岁！！</p>
+								</li>
+							</ul>
+						</div>
+						<div class="fRight floatr">
+							<p>66.66元</p>
+						</div>
+						<div class="clearBoth"></div>
+					</div>
+					<div class="fChild">
+						<div class="fLeft floatl">
+							<div class="fHead">
+								<img src="img/head.png" />
+							</div>
+						</div>
+						<div class="fMiddle floatl">
+							<ul>
+								<li>
+									<p>王文杰&nbsp;<span>2018-02-18</span></p>
+								</li>
+								<li>
+									<p>2018新年快乐，巴迪斯万岁！！</p>
+								</li>
+							</ul>
+						</div>
+						<div class="fRight floatr">
+							<p>66.66元</p>
+						</div>
+						<div class="clearBoth"></div>
+					</div>
+				</div>
+				<div class="bottom">
+					<img src="img/bottom.png" />
+				</div>
+			</div>
+			<div class="picBox">
+				<img src="img/pic.png" />
+				<div class="picImg">
+					<div class="floatl">
+						<a href="http://v7.rabbitpre.com/m/7vuYjm9?lc=2&sui=JvrM3Tdv&from=timeline&isappinstalled=0#from=share">
+							<img src="img/share01.png" />
+						</a>						
+					</div>
+					<div class="floatl">
+						<a href="http://v7.rabbitpre.com/m/7vuYjm9?lc=2&sui=JvrM3Tdv&from=timeline&isappinstalled=0#from=share">
+							<img src="img/share01.png" />
+						</a>
+					</div>
+					<div class="clearl"></div>
+				</div>
+			</div>
+			<div class="knowMore">
+				<a href="http://v7.rabbitpre.com/m/7vuYjm9?lc=2&sui=JvrM3Tdv&from=timeline&isappinstalled=0#from=share"><img src="img/know.png"/></a>
+			</div>
+			<div class="shareLeft">
+				<img src="img/left.png" />
+			</div>
+		</div>
+		<!--分享-->
+		<div id="sharing" style="display: none;">
+			<img src="img/sharing.png" />
+		</div>
+		<!--<button id="hidBtn" style="position: fixed;bottom: 0;right: 0;display: block;z-index: 100;">隐藏的按钮</button>-->
+		<div class="delete" hidden="hidden"></div>
 	</body>
 	<script type="text/javascript" src="js/popWin.js" ></script>
 	<script type="text/javascript" src="js/index.js" ></script>
@@ -121,7 +311,10 @@
 					    }
 			    }, false);
 			}    
+		audioAutoPlay('bg');
+		audioAutoPlay('msg',0);
 		audioAutoPlay('pMusic',0);
 		audioAutoPlay('videoy',0);
+		audioAutoPlay('over',0);
 	</script>
 </html>
