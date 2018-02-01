@@ -349,7 +349,7 @@ body {
         #group .group .myWord .mwHead img {
           width: 100%; }
       #group .group .myWord .mwContent {
-        width: 72%;
+        width: 70%;
         margin-right: 3%; }
         #group .group .myWord .mwContent .mwImg {
           width: 50%; }
@@ -358,7 +358,7 @@ body {
         #group .group .myWord .mwContent .mwText {
           padding: 0.1rem 0.15rem;
           background-color: #a0e75a;
-          font-size: 0.3rem;
+          font-size: 0.28rem;
           color: #1e1e1e;
           border: 1px solid #cecece;
           border-radius: 5px;
@@ -384,7 +384,7 @@ body {
         #group .group .otherWord .owHead img {
           width: 100%; }
       #group .group .otherWord .owContent {
-        width: 72%;
+        width: 70%;
         margin-left: 3%; }
         #group .group .otherWord .owContent .owName {
           font-size: 0.24rem;
@@ -394,7 +394,7 @@ body {
         #group .group .otherWord .owContent .owText {
           padding: 0.1rem 0.15rem;
           background-color: white;
-          font-size: 0.3rem;
+          font-size: 0.28rem;
           line-height: 0.46rem;
           color: #1e1e1e;
           border: 1px solid #cecece;

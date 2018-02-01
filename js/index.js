@@ -11,7 +11,7 @@ $(function(){
 			music = 0;
 		}
 	}, 10);
-	$('#music').on('touchstart', function() {
+	$('#music').on('click', function() {
 		if(musicOpen == true) {
 			musicOpen = false;
 			clearInterval(musicTween);
@@ -38,9 +38,9 @@ function showRed(){
 	$('#music').show();
 	$.get('wx.json',function(data){
 		mydata = data;
-		addDanmu('.danmu1','danmuBox1',mydata,14000);
-		addDanmu('.danmu2','danmuBox2',mydata,16000);
-		addDanmu('.danmu3','danmuBox3',mydata,13000);
+		addDanmu('.danmu1','danmuBox1',mydata,25);
+		addDanmu('.danmu2','danmuBox2',mydata,30);
+		addDanmu('.danmu3','danmuBox3',mydata,20);
 	});
 	$('.share').on('click',function(){
 		$('#sharing').show();
@@ -132,7 +132,7 @@ function myWord(c,id,index,headSrc,text,picsrc){
 	{
 		case 1:
 			var html = "";
-			html += '<div class="myWord word'+c+'"><div class="mwHead floatr"><img src='+headSrc+'/></div>';
+			html += '<div class="myWord word'+c+'"><div class="mwHead floatr"><img src='+headSrc+' /></div>';
 			html += '<div class="mwContent floatr"><div class="mwText floatr"><p>'+text+'</p>';
 			html += '<div class="gs"><img src="img/greensan.png" /></div></div>';
 			html += '<div class="clearr"></div></div><div class="clearr"></div></div>';
@@ -164,7 +164,9 @@ function myWord(c,id,index,headSrc,text,picsrc){
 }//微信群聊
 //阻止滑动
 function onHandler(e){
+	var e = e||window.event;
 	e.preventDefault();
+	e.stopPropagation();
 }
 function wxChating(wn,wh){
 	document.addEventListener('touchmove', onHandler, false);
@@ -172,6 +174,7 @@ function wxChating(wn,wh){
 	var i=0;
 	var wxName = wn;
 	var wxHead = wh;
+	wh = "img/me.jpg";
 	var pIndex = [2,1,1,2,2,2,2,1,3,2,1,1,2,1,1,1,1,1,1,2];	
 	var pHead = [1,1,2,3,4,5,wh,1,1,wh,wh,3,4,5,wh,3,4,5,1,1];	
 	var pName = ["巴迪斯董事长龙国胜","巴迪斯董事长龙国胜","巴迪斯总经理郭敏瑜","巴迪斯湖北经销商","巴迪斯新疆经销商","巴迪斯长沙经销商",wn,"巴迪斯董事长龙国胜","巴迪斯董事长龙国胜",wn,wn,"巴迪斯湖北经销商","巴迪斯新疆经销商","巴迪斯长沙经销商",wn,"巴迪斯湖北经销商","巴迪斯新疆经销商","巴迪斯长沙经销商","巴迪斯董事长龙国胜","巴迪斯董事长龙国胜"];
@@ -201,9 +204,8 @@ function wxChating(wn,wh){
 						$('#group').css('opacity',0);
 						$('#phoneCome').show();
 						$('#pMusic')[0].play();
-						//先显示视频结束
-						i++;
-						elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i], $('#videoy')[0].duration);
+						
+						
 						//拒接
 						$('.refuse a').on('click', function() {
 							var self = $(this);
@@ -227,46 +229,56 @@ function wxChating(wn,wh){
 							$('#group').css('opacity',1);
 							$('#yearVideo').hide();
 							$('#bg')[0].play();
+							
+							//先显示视频结束
+							i++;
+							elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i], $('#videoy')[0].duration);
 							$('#over')[0].play();
-							itween = setInterval(function() {
-								i++;
-								if(i == pIndex.length - 1) {
-									clearInterval(itween);
-									$('.happinput').show();
-									document.removeEventListener('touchmove', onHandler, false);
-									//点击事件
-									$('#hidBtn').on('click', function() {
-										myWord(20, '.group', 1, wh, $('.happinput input').val(), "");
-										$('.happinput input').val("");
-										$('.happinput input').attr('disabled', 'disabled');
-		
-										var sendStatus = true;
-										if(sendStatus == true) {
-											setTimeout(function() {
+							setTimeout(function(){
+								itween = setInterval(function() {
+									i++;
+									if(i == pIndex.length - 1) {
+										clearInterval(itween);
+										$('.happinput').show();
+										document.removeEventListener('touchmove', onHandler, false);
+										//点击事件
+										$('#hidBtn').on('click', function() {
+											myWord(20, '.group', 1, wh, $('.happinput input').val(), "");
+											$('.happinput input').val("");
+											$('.happinput input').attr('disabled', 'disabled');
+			
+											var sendStatus = true;
+											if(sendStatus == true) {
+												setTimeout(function() {
+													elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i]);
+													$('.word19').on('click', function() {
+														$('#group').hide();
+														showRed();
+														
+													});
+												}, 1500);
+												
+											}
+										});
+									} else {
+										switch(i) {
+											case 9:
+												myWord(i, '.group', pIndex[i],"img/me.jpg", pText[i], pSrc[i]);
+												break;
+											case 10:
+												myWord(i, '.group', pIndex[i],"img/me.jpg", pText[i], pSrc[i]);
+												break;
+											case 14:
+												myWord(i, '.group', pIndex[i],"img/me.jpg", pText[i], pSrc[i]);
+												break;
+											default:
 												elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i]);
-												$('.word19').on('click', function() {
-													$('#group').hide();
-													showRed();
-													
-												});
-											}, 1500);
-											
+												break;
 										}
-									});
-								} else {
-									switch(i) {
-										case 9:
-										case 10:
-										case 14:
-											myWord(i, '.group', pIndex[i], pHead[i], pText[i], pSrc[i]);
-											break;
-										default:
-											elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i]);
-											break;
 									}
-								}
-		
-							}, 1500);
+			
+								}, 1500);
+							},1000);
 						}
 					}, 1800);
 					break;
@@ -291,7 +303,7 @@ function addDanmu(id,className,data,time){
 		html += '<span>'+data[i].open.openName+'</span>：<span>'+data[i].content+'</span></div><div class="clearl"></div></div>';
 		$('.'+className).append(html);
 		
-		length += ($('.'+className).find('.danBox').eq(i).width()+10);
+		length += (parseInt($('.'+className).find('.danBox').eq(i).width())+11);
 	}
 	for(var i=0;i<data.length;i++)
 	{
@@ -300,13 +312,21 @@ function addDanmu(id,className,data,time){
 		html += '<span>'+data[i].open.openName+'</span>：<span>'+data[i].content+'</span></div><div class="clearl"></div></div>';
 		$('.'+className).append(html);
 		
-		length += ($('.'+className).find('.danBox').eq(i).width()+10);
+		length += (parseInt($('.'+className).find('.danBox').eq(i).width())+11);
 	}
 	$('.'+className).append('<div class="clearl"></div>');
 	$('.'+className).width(length);
-	$('.'+className).css('left',$(window).width()).stop().animate({"left":-length/2},time,"linear",function(){
-		lunbo('.'+className,length/2,time);
-	});
+	$('.'+className).css('left',$(window).width());
+	var start = $(window).width();
+	var cTween = setInterval(function(){
+		start-=0.5;
+		if(start==(-length/2)){
+			start=0;
+			$('.'+className).css('left',start+'px');
+		}else{
+			$('.'+className).css('left',start+'px');
+		}
+	},time);
 	
 	
 }

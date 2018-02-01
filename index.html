@@ -17,6 +17,7 @@
 		<div class="delete" hidden="hidden"></div>
 		<div class="imgRoading" hidden="hidden">
 			<img src="img/red.png" />
+			<img src="img/me.jpg" />
 		</div>
 		<audio id="pMusic"  loop="loop" preload  src="music/wx.mp3" hidden="hidden"></audio >
 		<audio id="msg" preload  src="music/msg.mp3" hidden="hidden"></audio >
@@ -293,7 +294,6 @@
 		<button id="hidBtn" style="position: fixed;bottom: 0;right: 0;display: block;z-index: 100;">隐藏的按钮</button>
 		<div class="delete" hidden="hidden"></div>
 	</body>
-	<script type="text/javascript" src="js/input.js" ></script>
 	<script type="text/javascript" src="js/popWin.js" ></script>
 	<script type="text/javascript" src="js/index.js" ></script>
 	<script>
@@ -321,6 +321,13 @@
 //如果是苹果手机
         if (browser.versions.iPhone || browser.versions.iPad || browser.versions.ios) {
             $('body').height($('body')[0].clientHeight);
+             $('#username').on('click', function () {
+                var target = this;
+                setTimeout(function(){
+                    target.scrollIntoViewIfNeeded();
+
+                },300);
+            });
         }
 
 //如果是安卓手机
