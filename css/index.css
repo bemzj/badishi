@@ -444,11 +444,11 @@ body {
       width: 100%; }
     #getRed .redTop .money {
       position: absolute;
-      top: 22.1%;
+      top: 21.6%;
       text-align: center;
       left: 0%;
       width: 100%;
-      font-size: 0.42rem;
+      font-size: 0.54rem;
       font-family: helvetica;
       font-weight: bold;
       color: #fff031; }
@@ -582,7 +582,7 @@ body {
     width: 79.2%;
     position: absolute;
     left: 10.4%;
-    top: 43.5%; }
+    top: 35%; }
     .picBox .picImg .floatl {
       width: 47.5%;
       margin-right: 5%; }
@@ -594,7 +594,16 @@ body {
     .picBox .picImg .floatl:nth-last-child(2) {
       margin-right: 0%; }
   .picBox img {
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 5px; }
+  .picBox p {
+    font-size: 8px;
+    line-height: 0.3rem;
+    color: #333333; }
+  .picBox p:nth-child(2) {
+    font-size: 10px;
+    color: #fa5d3d;
+    font-weight: bold; }
 
 .knowMore {
   width: 79.73%;

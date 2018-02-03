@@ -66,7 +66,7 @@
 			</div>
 			<div class="input">
 				<img src="img/input.jpg" />
-				<form class="happinput">
+				<form class="happinput" action="">
 					<input type="text" >
 				</form>
 			</div>
@@ -116,7 +116,7 @@
 		<div id="getRed" style="display: none;">
 			<div class="redTop">
 				<img src="img/redBack.jpg" />
-				<p class="money">200.00元</p>
+				<p class="money">5.00元</p>
 				<div class="flower">
 					<img src="img/load01.png" />
 				</div>
@@ -269,11 +269,19 @@
 					<div class="floatl">
 						<a href="http://v7.rabbitpre.com/m/7vuYjm9?lc=2&sui=JvrM3Tdv&from=timeline&isappinstalled=0#from=share">
 							<img src="img/share01.png" />
+							<p>北京建博会</p>
+							<p>展览地址：北京国际展览中心新馆</p>
+							<p>展位编号：E1馆A01</p>
+							<p>展会时间：2018年3月9-12日</p>
 						</a>						
 					</div>
 					<div class="floatl">
 						<a href="http://v7.rabbitpre.com/m/7vuYjm9?lc=2&sui=JvrM3Tdv&from=timeline&isappinstalled=0#from=share">
 							<img src="img/share01.png" />
+							<p>上海建博会</p>
+							<p>展览地址：国家会展中心</p>
+							<p>展位编号：N17</p>
+							<p>展会时间：2018年3月21-23日</p>
 						</a>
 					</div>
 					<div class="clearl"></div>
@@ -297,9 +305,7 @@
 	<script type="text/javascript" src="js/popWin.js" ></script>
 	<script type="text/javascript" src="js/index.js" ></script>
 	<script>
-		$(document).ready(function () {
-
-        //判断诗苹果还是安卓
+		//判断诗苹果还是安卓
         var browser = {
             versions: function () {
                 var u = navigator.userAgent, app = navigator.appVersion;
@@ -318,21 +324,14 @@
             }(),
             language: (navigator.browserLanguage || navigator.language).toLowerCase()
         }
-//如果是苹果手机
+		//如果是苹果手机
         if (browser.versions.iPhone || browser.versions.iPad || browser.versions.ios) {
             $('body').height($('body')[0].clientHeight);
-             $('#username').on('click', function () {
-                var target = this;
-                setTimeout(function(){
-                    target.scrollIntoViewIfNeeded();
-
-                },300);
-            });
         }
 
-//如果是安卓手机
+		//如果是安卓手机
         if (browser.versions.android) {
-            $('#username').on('click', function () {
+            $('.happinput input').on('click', function () {
                 var target = this;
                 setTimeout(function(){
                     target.scrollIntoViewIfNeeded();
@@ -341,7 +340,6 @@
             });
         }
 
-    });
 		//微信加入聊天
 		function audioAutoPlay(id,v){
 			var audio = document.getElementById(id);

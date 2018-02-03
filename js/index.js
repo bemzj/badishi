@@ -1,7 +1,7 @@
 $(function(){
 	$('.delete').remove();
-	loading();
-//	showRed();
+//	loading();
+	showRed();
 	var music = 0;
 	var musicOpen = true;
 	var musicTween = setInterval(function() {
@@ -104,7 +104,7 @@ function elseWord(c,id,index,headSrc,name,text,picsrc,time){
 	}
 		var wordTop = $('.word'+c).offset().top - $(window).scrollTop();
 		if($(window).height() - wordTop< ($('.word' + c).height() + parseInt($('.word' + c).css('margin-bottom')) + $('.input').height())) {
-			var stop = $('.word' + c).height() + parseInt($('.word' + c).css('margin-bottom')) + $(window).scrollTop()+ $('.input').height();
+			var stop = $('.group').height()+parseInt($('.group').css('padding-top'))+parseInt($('.group').css('padding-bottom'))-$(window).height();
 			$('html,body').animate({
 				scrollTop: stop
 			}, 300, function() {
@@ -148,7 +148,7 @@ function myWord(c,id,index,headSrc,text,picsrc){
 	}
 	var wordTop = $('.word' + c).offset().top - $(window).scrollTop();
 		if($(window).height() - wordTop< ($('.word' + c).height() + parseInt($('.word' + c).css('margin-bottom')) + $('.input').height())) {
-			var stop = $('.word' + c).height() + parseInt($('.word' + c).css('margin-bottom')) + $(window).scrollTop()+ $('.input').height();
+			var stop = $('.group').height()+parseInt($('.group').css('padding-top'))+parseInt($('.group').css('padding-bottom'))-$(window).height();
 			$('html,body').animate({
 				scrollTop: stop
 			}, 300, function() {
@@ -224,16 +224,20 @@ function wxChating(wn,wh){
 							$('#videoy')[0].play();
 		
 						});
-						//视频播放完毕
-						document.getElementById("videoy").onended = function() {
-							$('#group').css('opacity',1);
-							$('#yearVideo').hide();
+						
+						
+						var videofull = true;
+						document.getElementById("videoy").addEventListener("x5videoexitfullscreen", function(){
+							if(videofull==true){
+							videofull = false;
+						  	$('#group').css('opacity',1);
+						  	$('#yearVideo').hide();
 							$('#bg')[0].play();
-							
-							//先显示视频结束
+							setTimeout(function(){
 							i++;
 							elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i], $('#videoy')[0].duration);
 							$('#over')[0].play();
+							
 							setTimeout(function(){
 								itween = setInterval(function() {
 									i++;
@@ -242,11 +246,15 @@ function wxChating(wn,wh){
 										$('.happinput').show();
 										document.removeEventListener('touchmove', onHandler, false);
 										//点击事件
-										$('#hidBtn').on('click', function() {
-											myWord(20, '.group', 1, wh, $('.happinput input').val(), "");
+										$('.happinput').on('click', function() {
+											$('.happinput input').blur();
+											var inputText = $('.happinput input').val();
+											setTimeout(function(){
+												myWord(20, '.group', 1, wh,inputText , "");
+											},500);
 											$('.happinput input').val("");
 											$('.happinput input').attr('disabled', 'disabled');
-			
+											
 											var sendStatus = true;
 											if(sendStatus == true) {
 												setTimeout(function() {
@@ -278,7 +286,85 @@ function wxChating(wn,wh){
 									}
 			
 								}, 1500);
-							},1000);
+							},0);
+							},500);
+							}
+						});
+						//视频播放完毕
+						document.getElementById("videoy").onended = function() {
+							if(videofull==true){
+								videofull = false;
+							
+							$('#group').css('opacity',1);
+							$('#yearVideo').hide();
+							$('#bg')[0].play();
+							
+							//先显示视频结束
+							var setTime = 0;
+							if (browser.versions.android) {
+								setTime = 1500;
+							}else if(browser.versions.iPhone || browser.versions.iPad || browser.versions.ios){
+								setTime = 0;
+							}
+							setTimeout(function(){
+							i++;
+							elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i], $('#videoy')[0].duration);
+							$('#over')[0].play();
+							
+							setTimeout(function(){
+								itween = setInterval(function() {
+									i++;
+									if(i == pIndex.length - 1) {
+										clearInterval(itween);
+										$('.happinput').show();
+										document.removeEventListener('touchmove', onHandler, false);
+										
+										//点击事件
+										$('.happinput').on('submit', function() {
+											$('.happinput input').blur();
+											var inputText = $('.happinput input').val();
+											setTimeout(function(){
+												myWord(20, '.group', 1, wh,inputText , "");
+											},500);
+											
+											$('.happinput input').val("");
+											$('.happinput input').attr('disabled', 'disabled');
+											
+											var sendStatus = true;
+											if(sendStatus == true) {
+												setTimeout(function() {
+													elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i]);
+													$('.word19').on('click', function() {
+														$('#group').hide();
+														showRed();
+														
+													});
+												}, 1500);
+												
+											}
+											return false;
+										});
+									} else {
+										switch(i) {
+											case 9:
+												myWord(i, '.group', pIndex[i],"img/me.jpg", pText[i], pSrc[i]);
+												break;
+											case 10:
+												myWord(i, '.group', pIndex[i],"img/me.jpg", pText[i], pSrc[i]);
+												break;
+											case 14:
+												myWord(i, '.group', pIndex[i],"img/me.jpg", pText[i], pSrc[i]);
+												break;
+											default:
+												elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i]);
+												break;
+										}
+									}
+			
+								}, 1500);
+							},0);
+							},setTime);
+							}
 						}
 					}, 1800);
 					break;
