@@ -1,7 +1,7 @@
 $(function(){
 	$('.delete').remove();
-//	loading();
-	showRed();
+	loading();
+//	showRed();
 	var music = 0;
 	var musicOpen = true;
 	var musicTween = setInterval(function() {
@@ -171,6 +171,7 @@ function onHandler(e){
 function wxChating(wn,wh){
 	document.addEventListener('touchmove', onHandler, false);
 	$('#group').show();
+	$('.input').show();
 	var i=0;
 	var wxName = wn;
 	var wxHead = wh;
@@ -261,6 +262,7 @@ function wxChating(wn,wh){
 													elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i]);
 													$('.word19').on('click', function() {
 														$('#group').hide();
+														$('.input').hide();
 														showRed();
 														
 													});
@@ -336,6 +338,7 @@ function wxChating(wn,wh){
 													elseWord(i, '.group', pIndex[i], 'img/gHead0' + pHead[i] + '.jpg', pName[i], pText[i], pSrc[i]);
 													$('.word19').on('click', function() {
 														$('#group').hide();
+														$('.input').hide();
 														showRed();
 														
 													});
