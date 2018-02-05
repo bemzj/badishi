@@ -186,7 +186,7 @@ function wxChating(wn,wh){
 		"大家安静一下，别high过头了，我有话要跟你们当面说。","","","为巴迪斯疯狂打call","光祝福没有红包吗！！！","","对呀，红包红包","求红包+1","求红包+1","求红包+1","求红包+1",
 		"想要红包？没问题！巴迪斯2018年狗年春节拜年红包XX万等着您们抢。每人回复一句<span>2018年春节祝福语向巴迪斯拜年</span>，即可随机获得1-200元的红包。抢完即止，还不行动？",""
 	];
-	var pSrc = ["img/gif.png","","","img/gif.png","img/gif.png","img/gif.png","img/gif.png","","","img/gif.png","","","img/gif.png","","","","","","","img/red.png"];
+	var pSrc = ["img/gif1.gif","","","img/gif2.gif","img/gif3.gif","img/gif4.gif","img/gif2.gif","","","img/gif5.gif","","","img/gif6.gif","","","","","","","img/red.png"];
 	var itween;
 	setTimeout(function(){
 		elseWord(i,'.group',pIndex[i],'img/gHead0'+pHead[i]+'.jpg',pName[i],pText[i],pSrc[i]);
