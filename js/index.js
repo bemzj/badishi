@@ -105,7 +105,7 @@ function elseWord(c,id,index,headSrc,name,text,picsrc,time){
 		var wordTop = $('.word'+c).offset().top - $(window).scrollTop();
 		if($(window).height() - wordTop< ($('.word' + c).height() + parseInt($('.word' + c).css('margin-bottom')) + $('.input').height())) {
 			var stop = $('.group').height()+parseInt($('.group').css('padding-top'))+parseInt($('.group').css('padding-bottom'))-$(window).height();
-			$('html,body').animate({
+			$('#group').animate({
 				scrollTop: stop
 			}, 300, function() {
 				$('.word' + c).css('opacity', 1);
@@ -149,7 +149,7 @@ function myWord(c,id,index,headSrc,text,picsrc){
 	var wordTop = $('.word' + c).offset().top - $(window).scrollTop();
 		if($(window).height() - wordTop< ($('.word' + c).height() + parseInt($('.word' + c).css('margin-bottom')) + $('.input').height())) {
 			var stop = $('.group').height()+parseInt($('.group').css('padding-top'))+parseInt($('.group').css('padding-bottom'))-$(window).height();
-			$('html,body').animate({
+			$('#group').animate({
 				scrollTop: stop
 			}, 300, function() {
 				$('.word' + c).css('opacity', 1);
