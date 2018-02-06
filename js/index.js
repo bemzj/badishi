@@ -1,7 +1,7 @@
 $(function(){
 	$('.delete').remove();
-	loading();
-//	showRed();
+//	loading();
+	showRed();
 	var music = 0;
 	var musicOpen = true;
 	var musicTween = setInterval(function() {
@@ -29,6 +29,10 @@ $(function(){
 		}
 	
 	});
+	if($(window).height()<530)
+	{
+		$('.money').css('top','27.5%');
+	}
 });
 
 //显示红包页面
@@ -40,7 +44,7 @@ function showRed(){
 		mydata = data;
 		addDanmu('.danmu1','danmuBox1',mydata,25);
 		addDanmu('.danmu2','danmuBox2',mydata,30);
-		addDanmu('.danmu3','danmuBox3',mydata,20);
+//		addDanmu('.danmu3','danmuBox3',mydata,20);
 	});
 	$('.share').on('click',function(){
 		$('#sharing').show();

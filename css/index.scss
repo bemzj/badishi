@@ -488,7 +488,8 @@ body{
         }
         .money{
             position: absolute;
-            top: 21.6%;
+            top: 26%;
+            top: 1.2rem;
             text-align: center;
             left: 0%;
             width: 100%;
@@ -501,7 +502,7 @@ body{
             position: absolute;
             bottom: auto;
             width: 0.3rem;
-            top: 36.2%;
+            top: 50%;
             right: auto;
             left: 20.27%;
             animation: aniLoad01 1s linear infinite;
@@ -535,11 +536,11 @@ body{
         .danmu{
             position: absolute;
             left: 0;
-            top: 38%;
+            top: 50%;
             height: 30%;
             width: 100%;
             >div{
-                height: 33.3333%;
+                height: 50%;
                 position: relative;
             }
         }
@@ -651,15 +652,25 @@ body{
         }
     }
 }
+.titles{
+    position: absolute;
+    width: 73.06%;
+    left: 13.47%;
+    top: 11%;
+    img{
+       margin-bottom: 0px; 
+    }
+    
+}
 .picBox{
-    padding: 0.4rem 0;
     width: 100%;
-    position: relative;
+    position: absolute;
+    bottom: 0;
     .picImg{
         width: 79.2%;
         position: absolute;
         left: 10.4%;
-        top: 35%;
+        top: 25%;
         .floatl{
             width:47.5%;
             margin-right: 5%;
@@ -677,7 +688,6 @@ body{
     }
     img{
         width: 100%;
-        margin-bottom: 5px;
     }
     p{
         font-size: 8px;
@@ -685,18 +695,28 @@ body{
         color: #333333;
     }
     p:nth-child(2){
+        margin-top: 0.05rem;
         font-size: 10px;
         color: #fa5d3d;
         font-weight: bold;
     }
 }
-.knowMore{
-    width: 79.73%;
-    margin: 0 auto;
-    a{
-        display: block;
-        width: 100%;
-        img{
+.shareBox{
+    width: 100%;
+    padding: 0.05rem 0 0.22rem;
+    .share{
+        width: 43.47%;
+        margin-left: 3.7%;
+        input{
+            width: 100%;
+            display: block;
+        }
+    }
+    .knowMore{
+        width: 43.47%;
+        margin-left: 6.7%;
+        a{
+            display: block;
             width: 100%;
         }
     }
